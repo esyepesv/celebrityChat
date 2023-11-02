@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory;
 import org.springframework.boot.autoconfigure.mongo.MongoClientSettingsBuilderCustomizer;
 import org.springframework.boot.autoconfigure.mongo.MongoProperties;
-import org.springframework.boot.autoconfigure.mongo.MongoPropertiesClientSettingsBuilderCustomizer;
+//import org.springframework.boot.autoconfigure.mongo.MongoPropertiesClientSettingsBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,7 +27,7 @@ public class MongoConfig {
         properties.setUri(secret.getUri());
 
         List<MongoClientSettingsBuilderCustomizer> list = new ArrayList<>();
-        list.add(new MongoPropertiesClientSettingsBuilderCustomizer(properties));
+        //list.add(new MongoPropertiesClientSettingsBuilderCustomizer(properties));
         return new ReactiveMongoClientFactory(list);
     }
 }

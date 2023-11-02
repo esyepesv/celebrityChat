@@ -1,11 +1,12 @@
 package co.com.celebritychat.mongo;
 
+import co.com.celebritychat.model.chat.Chat;
 import co.com.celebritychat.mongo.helper.AdapterOperations;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MongoRepositoryAdapter extends AdapterOperations<Object/* change for domain model */, Object/* change for adapter model */, String, MongoDBRepository>
+public class MongoRepositoryAdapter extends AdapterOperations<Chat, Chat, String, MongoDBRepository>
 // implements ModelRepository from domain
 {
 
@@ -15,6 +16,6 @@ public class MongoRepositoryAdapter extends AdapterOperations<Object/* change fo
          *  super(repository, mapper, d -> mapper.mapBuilder(d,ObjectModel.ObjectModelBuilder.class).build());
          *  Or using mapper.map with the class of the object model
          */
-        super(repository, mapper, d -> mapper.map(d, Object.class/* change for domain model */));
+        super(repository, mapper, d -> mapper.map(d, Chat.class));
     }
 }
